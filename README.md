@@ -1,5 +1,9 @@
 # ktor_sample
-A sample Ktor project extracted from a much bigger project I'm currently working on
+A sample Ktor application extracted from a startup project I'm helping get off the ground. The only feature module that I want to showcase is called "points", the other module just contain some simple classes needed for the E2E tests to run successfully.
+
+The main goal behind the whole architecture is to have loosely coupled modules, which will allow a painless transition to a microservices architecture (if it'll ever be needed) in the future. Please note that I used the words "loosely coupled", not "completely decoupled". I had to live with some minor trade-offs in order to make the development of the current mvp as smooth as possible, without introducing too many contraints that would be needed in order to achieve a perfect separation. This is the reason why the "points" module can't work by itself, but needs some info from the modules it interacts with. 
+
+SOLID principles are applied throughout the code, with a E2E testing strategy that's used to reduce the development time to the minimum, while also assuring high quality. Unit tests on the services/repos don't cover the whole codebase at the moment, but are trivial to write since both services and repositories are 100% pure kotlin classes, without external dependencies.
 
 ## Requirements:
 - Docker Desktop
